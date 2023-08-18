@@ -1,18 +1,29 @@
 #include <stdio.h>
 #include <conio.h>
 
-//3 - Escreva um algoritmo que tenha em seu programa principal a exibição de um menu de opções conforme abaixo:
-//1 - Calcular Idade
-//2 - Média de 4 Notas
-//3 - Multiplicação de 2 Número
-//4 - Divisão de 2 Número
-//5 - Sair
+float  divisao_dois_numeros(){
+	float nu1, nu2, div;
+	system("cls");
+	printf("<<<Calcular Divisao de 2 Numeros>>> ");
+	printf("\nInforme o primeiro numero: ");
+	scanf("%f", &nu1);
+	printf("\nInforme o segundo numero: ");
+	scanf("%f", &nu2);
+	div = nu1 / nu2;
+	return div;
+}
 
-//O usuário deverá escolher qual opção deseja executar. 
-//Caso o usuário escolha uma opção inválida, uma mensagem deverá ser exibida de advertência e o menu deverá ser exibido novamente para que seja escolhido uma nova opção. 
-
-//Para cada opção escolhida, o algoritmo deverá chamar a função correspondente a opção, ou seja, teremos no mínimo 4 funções diferentes no algoritmo.
-//Cada função deverão ter suas leituras e processamentos correspondentes ao objetivo da opção escolhida. Retornar e exibir o resultado no programa principal.
+float  multiplicacao_dois_numeros(){
+	float n1, n2, mult;
+	system("cls");
+	printf("\n<<<Calcular Multiplicacaoo de 2 Numeros>>>\n");
+	printf("\nInforme o primeiro numero: ");
+	scanf("%f", &n1);
+	printf("\nInforme o segundo numero: ");
+	scanf("%f", &n2);
+	mult = n1 * n2;
+	return mult;
+}
 
 float  media_quatro_notas(){
 	float nota1, nota2, nota3, nota4, media;
@@ -24,11 +35,11 @@ float  media_quatro_notas(){
 	scanf("%f", &nota2);
 	printf("\nInforme a terceira Nota: ");
 	scanf("%f", &nota3);
-	printf("\nInforme a quartaa Nota: ");
+	printf("\nInforme a quarta Nota: ");
 	scanf("%f", &nota4);
 	media = (nota1 + nota2 + nota3 + nota4) / 4;
+	return media;
 }
-
 
 int calcular_idade(){
 	int aa, an, idade;
@@ -36,17 +47,16 @@ int calcular_idade(){
 	printf("<<<Calcular Idade>>> ");
 	printf("\nInforme o ano atual: ");
 	scanf("%d", &aa);
-	printf("\nInforme o ano de nascimento: ");
+	printf("Informe o ano de nascimento: ");
 	scanf("%d", &an);
 	idade = aa - an;
-	printf("\nSua idade eh: %d", idade);
-	system("pause");
+	return idade;
 }
 
 int menu(){
 	int opcao;
 	do{
-		printf("Informe a Opcao:" );
+		system("cls");
 		printf("\n1 - Calcular Idade");
 		printf("\n2 - Media de 4 Notas:");
 		printf("\n3 - Multiplicacao de 2 Numeros");
@@ -57,14 +67,35 @@ int menu(){
 		
 		switch (opcao){
 			case 1:
-				calcular_idade();
+				printf("\nIdade: %d ",calcular_idade());
 			break;
-		}			
-	} while (opcao != 5);	
-	
+			
+			case 2:
+				printf("\nSua Media eh: %0.2f", media_quatro_notas());
+			break;
+			
+			case 3:
+				printf("\nO Resultado eh: %0.2f", multiplicacao_dois_numeros());
+			break;
+			
+			 case 4:
+			 	printf("\nO Resultado eh: %0.2f", divisao_dois_numeros());
+			break;
+			
+			case 5:
+				printf("\nO Programa terminou !");
+			break;
+			
+			case 6:
+				printf("\nOpcao Invalida!!!");
+			break;	
+		}	
+		printf("\n\n");	
+		system("pause"); 
+						
+	} while (opcao != 5);
 }
 
-
 void main(){
-	menu();
+ 	menu();
 }
