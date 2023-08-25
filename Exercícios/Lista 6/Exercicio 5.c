@@ -31,7 +31,6 @@ int verificar_categoria(int idade){
 		return categoria;
 	}
 	
-	
 }
 
 
