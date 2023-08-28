@@ -1,64 +1,72 @@
 #include <stdio.h>
-#include<conio.h>
+#include <conio.h>
 
-//1.	POR VALOR - Faça um procedimento que receba por parâmetros 2 valores. O usuário deverá escolher 
-//qual opção aritmética deverá ser realizado. (criar um menu com as opções dentro do procedimento)
+//1.	POR VALOR - Faça um programa que:
+//a.	leia os valores de A, B;
+//b.	se o número A e B for pares, fazer o procedimento soma;
+//c.	se o número A e B forem impares, fazer a função subtração;
+//d.	se o número A for PAR e B for IMPAR, fazer a média de ambos os números;
+//e.	se o número A for IMPAR e B for PAR, fazer uma função para exibir o maior número;
 
-int menu(){
-	int opcao;
-	do{
-		system("cls");
-		printf("\n1 - Calcular Idade");
-		printf("\n2 - Media de 2 Notas:");
-		printf("\n3 - Sair");
-		scanf("%d", &opcao);
-		
-		switch (opcao){
-			case 1:
-				printf("\nIdade: %d ",calcular_idade());
-			break;
-			
-			case 2:
-				printf("\nSua Media eh: %0.2f", media_duas_notas());
-			break;
-			
-			default:
-				printf("Opcao Invalida!!");
-		}	
-		printf("\n\n");	
-		system("pause"); 
-						
-	} while (opcao != 3);	
-	
-	
-	
-	
+int exibir_maior(float a, float b){
+	float maior;
+	if(a > b){
+		maior = a;
+		return  maior;
+	}
+	else{
+		maior = b;
+		return maior;
+	}
 }
 
-int calcular_idade(){
-	int aa, an, idade;
-	system("cls");
-	printf("<<<Calcular Idade>>> ");
-	printf("\nInforme o ano atual: ");
-	scanf("%d", &aa);
-	printf("Informe o ano de nascimento: ");
-	scanf("%d", &an);
-	idade = aa - an;
-	return idade;
+
+void calcular_media(float a, float b){
+	float media;
+	media = (a + b) / 2;
+	printf("A media de ambos eh: %0.2f", media);
 }
 
-float  media_duas_notas(){
-	float nota1, nota2, media;
-	system("cls");
-	printf("<<<Calcular Media de 2 Notas>>> ");
-	printf("\nInforme a primeira Nota: ");
-	scanf("%f", &nota1);
-	printf("\nInforme a segunda Nota: ");
-	scanf("%f", &nota2);
-	media = (nota1 + nota2) / 2;
-	return media;
+float calcular_sub(int a, int b){
+	float sub;
+	sub = a - b;
+	return sub;
+}
+
+void calcular_soma(int a, int b){
+	int soma;
+	soma = a + b;
+	printf("Resultado da Soma: %d", soma);
 }
 
 void main(){
- menu();		
+	int a, b, sub, maior;
+	printf("Informe o primeiro Valor: ");
+	scanf("%d", &a);
+	printf("Informe o segundo Valor: ");
+	scanf("%d", &b);
+	
+	if(a % 2 == 0 && b % 2 == 0){
+		calcular_soma(a,b);
+	}	
+	else{
+		if(a % 2 != 0 && b % 2 != 0){
+			sub = calcular_sub(a,b);
+			printf("Resultado da Subtracao: %0.2f", sub);
+		}
+		else{
+			if(a % 2 == 0 && b % 2 != 2){
+				calcular_media(a,b);
+			}
+			else{
+				if(a % 2 != 0 && b % 2 == 0){
+				 exibir_maior(a,b);
+				 maior = exibir_maior(a,b);
+				 printf("O Maior Numero eh: %0.2f", maior);
+				}
+				else{
+				}
+			}
+		}	
+	}
 }
