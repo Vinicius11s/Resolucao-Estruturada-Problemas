@@ -9,64 +9,61 @@
 //d.	chamar um procedimento com passagem de parâmetros para verificar e exibir o maior número;
 //e.	chamar um procedimento com passagem de parâmetros para verificar e exibir o menor número;
 
-float calcular_adicao(float a, float b, float c){
+void calcular_adicao(float a, float b, float c){
 	float adicao;
 	adicao = a + b + c;
-	return adicao;	
+	printf("\nAdicao dos Valores: %0.2f", adicao);	
 }
 
-float calcular_media(float a, float b, float c){
+void calcular_media(float a, float b, float c){
 	float media;
 	media = (a + b + c) / 3;
-	return media;
+	printf("\nMedia dos Valores: %0.2f", media);
 }
 
-float maior_numero(float a, float b, float c){
+void maior_numero(float a, float b, float c){
 	float maior;
 	if( a > b && a > c){
 		maior = a;
-		return maior;
 	}	
 	else{
 		if(b > a && b > c){
 			maior = b;
-			return maior;
 		}
 		else{
 			if(c > a && c > b){
 				maior = c;
-				return maior;
 			}
 			else{
 			}
+			
 		}
 	}
+	printf("\nMaior Numero entre os Valores eh: %0.2f", maior);
 }
 
-float menor_numero(float a, float b, float c){
+void menor_numero(float a, float b, float c){
 	float menor;
 	if( a < b && a < c){
 		menor = a;
-		return menor;
 	}	
 	else{
 		if(b < a && b < c){
 			menor = b;
-			return menor;
 		}
 		else{
 			if(c < a && c < b){
 				menor = c;
-				return menor;
 			}
 			else{
 			}
 		}
 	}
+	printf("\nMenor Numero entre os Valores eh: %0.2f", menor);
 }
 
 void main(){
-	float a, b, c, adicao, media, maior, menor;
+	float a, b, c;
 	printf("<<<Procedimentos para numeros recebidos>>>\n");
 	printf("\nInforme o Primeiro Valor: ");
 	scanf("%f", &a);
@@ -75,15 +72,8 @@ void main(){
 	printf("Informe o Terceiro Valor: ");
 	scanf("%f", &c);
 	
-	adicao = calcular_adicao(a,b,c);
-	printf("\nAdicao dos Valores: %0.2f", adicao);
-	
-	media = calcular_media(a,b,c);
-	printf("\nMedia dos Valores: %0.2f", media);
-	
-	maior = maior_numero(a,b,c);
-	printf("\nMaior Numero entre os Valores eh: %0.2f", maior);
-	
-	menor = menor_numero(a,b,c);
-	printf("\nMenor Numero entre os Valores eh: %0.2f", menor);
+	calcular_adicao(a,b,c);
+	calcular_media(a,b,c);
+	maior_numero(a,b,c);
+	menor_numero(a,b,c);
 }
