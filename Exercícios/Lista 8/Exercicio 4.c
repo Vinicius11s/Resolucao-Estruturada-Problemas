@@ -13,46 +13,59 @@
 //Esta empresa possui 5 funcionários, e todos precisaram ter seus salários calculados.
 
 
-float salario_bruto(){
-	float salariob;
+float verificar_salario_bruto(){
+	float salario_bruto;
 	printf("Informe o salario bruto: ");
-	scanf("%f", &salariob);
-	return salariob;
+	scanf("%f", &salario_bruto);
+	return salario_bruto;
 }
 
-float horas_extras(){
-	float extras;
+float verificar_horas_extras(){
+	float horas_extras;
 	printf("Informe a quantidade de horas extras: ");
-	scanf("%f", &extras);
-	calculo_extras(extras);
-	return calculo_extras();
+	scanf("%f", &horas_extras);
+	return horas_extras;
 }
 
-float descontos(){
-	float desconto;
+float verificar_descontos(){
+	float descontos;
 	printf("Informe a quantidade de descontos: ");
-	scanf("%f", &desconto);
-	return desconto;
+	scanf("%f", &descontos);
+	return descontos;
 }
 
-float calculo_extras(float extras){
+float calcula_extras(float horas_extra){
 	float calculo_extra;
-	calculo_extra = extras * 20.00;
+	calculo_extra = horas_extra * 20.00;
 	return calculo_extra;
 }
 
-float calculo_salario_bruto(){
-	float salario_brutoo, horas_extrass;
-	salario_brutoo  = salario_bruto();
-	horas_extrass = horas_extras();
-	salario_bruto_v = salario_brutoo + horas_extrass;
-	return salario_bruto_V;
-	 
+float calculo_salario_b(float salario_bruto, float calculo_extra){
+	float calculo_salario_bruto;
+	calculo_salario_bruto = salario_bruto + calculo_extra;
+	return calculo_salario_bruto;
+	
+}
+
+void salario_liquido(float calculo_salario_bruto, float descontos){
+	float salario_liq;
+	salario_liq = calculo_salario_bruto - descontos;
+	printf("Seu Salario Liquido sera: %0.2f", salario_liq);
 }
 
 
 void main(){
-	salario_bruto();
-	 calculo_salario_bruto();
+	float salario_bruto, horas_extras, descontos, calculo_extra, calculo_salario_bruto;
 	
+	salario_bruto = verificar_salario_bruto();
+	
+	horas_extras = verificar_horas_extras();
+	
+	descontos = verificar_descontos();
+	
+	calculo_extra = calcula_extras(horas_extras);
+	
+	calculo_salario_bruto = calculo_salario_b(salario_bruto, calculo_extra);
+	
+	salario_liquido(calculo_salario_bruto, descontos);
 }
