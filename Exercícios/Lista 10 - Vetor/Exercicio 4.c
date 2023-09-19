@@ -27,7 +27,7 @@ void main(){
 		}
 	}
 	if(encontrado == 1){
-		printf("\n\nPelo menos um valor e igual a media: \n %0.2f", media);
+		printf("\n\nPelo menos um valor e igual a media dos valores: \n %0.2f", media);
 	}
 	else{
 		printf("\n\nNenhum valor digitado e igual a media.");

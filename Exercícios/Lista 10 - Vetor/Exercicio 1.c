@@ -29,6 +29,4 @@ void recebe_numeros(){
 }
 void main(){
 	recebe_numeros();
-	
-	
 }
