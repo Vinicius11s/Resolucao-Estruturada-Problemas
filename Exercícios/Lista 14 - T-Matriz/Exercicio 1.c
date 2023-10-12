@@ -27,7 +27,8 @@ void verifica_valores(int mat[TL][TC]){
 			if(mat[l][c] > 10){
 				maiores_10++;
 			}
-			else{
+			else{,
+			
 			}
 		}
 	}
