@@ -56,7 +56,7 @@ void media_2_4(int mat[TL][TC]){
 			}
 			else{
 			}
-			if(c == 4){
+			if(c == 3){
 				acumulador_2 += mat[l][c];
 				cont++;
 			}
@@ -69,6 +69,22 @@ void media_2_4(int mat[TL][TC]){
 }
 
 
+substitui_valores(int mat[TL][TC]){
+	int l, c;      
+    for(l=0;l<TL;l++){
+		for(c=0;c<TC;c++){
+			mat[l][5] = mat[l][1] + mat[l][2];
+		}
+	}
+	printf("\nMatriz modificada, elentos das colunas 1 e 2 somados e inseridor na 6.\n\n");
+	for(l=0;l<TL;l++){
+		for(c=0;c<TC;c++){
+			printf("%d | ", mat[l][c]);
+		}
+		printf("\n");	
+	}
+}		
+
 void main(){
 	int mat[TL][TC];
 	printf("<<<Este algortimo>>>\n\n");
@@ -77,4 +93,6 @@ void main(){
 	exibir_matriz(mat);
 	soma_impares(mat);
 	media_2_4(mat);
+	substitui_valores(mat);
+
 }
