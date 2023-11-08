@@ -2,7 +2,7 @@
 #include <conio.h>
 #include <string.h>
 
-#define TF 2
+#define TF 5
 
 //1	Desenvolva um programa que leia e exiba um vetor registro conforme o modelo abaixo:
 //nome
@@ -10,9 +10,7 @@
 //cpf
 //idade
 //sexo (1-Masculino; 2-Feminino)
-
 //m base no modelo acima crie um programa que contenha um vetor de registros com 5 posições e faça:
-
 //	Criar um procedimento que leia os registros. 
 //	Criar um procedimento que exiba todos os registros. 
 //	Criar uma função que calcule a média salarial.

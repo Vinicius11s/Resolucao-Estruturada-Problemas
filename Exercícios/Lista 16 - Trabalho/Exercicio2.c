@@ -2,18 +2,15 @@
 #include <conio.h>
 #include <string.h>
 
-#define TF 2
+#define TF 5
 
 //2.	Criar um algoritmo que que armazene os dados dos alunos de uma determinada turma conforme abaixo:
-
 //- nome
 //- número de faltas
 //- nota1
 //- nota2
 //- média (a média deverá ser calcula pelo programa)
-
 //O algoritmo deverá ter as seguintes funcionalidades:
-
 //a.	Ler uma turma de 5 alunos
 //b.	Exibir todos os dados dos alunos lidos
 //c.	Exibir o nome e a nota do aluno com maior média

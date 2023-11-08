@@ -2,17 +2,14 @@
 #include <conio.h>
 #include <string.h>
 
-#define TF 2
+#define TF 7
 
 /*3.	Criar um algoritmo que armazene os dados das participantes em um concurso de beleza conforme abaixo:
-
 - nome
 - altura
 - cor preferida (1-branco, 2-vermelho, 3-amarelo, 4-Verde)
 - cor dos olhos (1-castanho, 2-preto, 3-azul, 4-verde)
-
 O algoritmo deverá ter as seguintes funcionalidades:
-
 a.	Ler os dados de 7 participantes 
 b.	Exibir todos os dadas as participantes
 c.	Exibir o nome e a altura da participante mais alta
@@ -32,7 +29,9 @@ struct dados{
 
 void ler_participantes(struct dados reg_part[TF]){
 	int i;
+	
 	printf("<<<Informe os seus dados: >>>");
+	
 	for(i=0; i<TF; i++){
 		printf("\n\nRegistro %d", i);
 		fflush(stdin);
@@ -58,7 +57,9 @@ void ler_participantes(struct dados reg_part[TF]){
 
 void exibir_participantes(struct dados reg_part[TF]){
 	int i;
+	
 	printf("<<<\n\nParticipantes Cadastrados: >>>");
+	
 	for(i=0; i<TF; i++){
 		printf("\n\n\nParticipante %d", i);
 		
@@ -194,73 +195,11 @@ void gosta_verde(struct dados reg_part[TF]){
 			acumula += reg_part[i].altura;
 			cont++;
 		}
-	}	
+	}
 	media_verde = acumula/cont;
 	printf("\n\nA media de altura dos Participantes que tem a cor preferida\nverde eh: %0.2f", media_verde);
 }
-/*
-void aluno_menor_media(struct dados reg_alunos[TF]){=
-	int i;
-	float media_menor;
-	char nome_media_menor[100];
-	
-	for(i=0; i<TF; i++){
-		if(i == 0){
-			media_menor = reg_alunos[i].media;
-			strcpy(nome_media_menor, reg_alunos[i].nome);
-		}
-		else{
-			if(reg_alunos[i].media < media_menor){
-				media_menor = reg_alunos[i].media;
-				strcpy(nome_media_menor, reg_alunos[i].nome);
-			}
-		}
-	}printf("\n\nO aluno com Menor media foi o %s, com media de %0.2f ", nome_media_menor, media_menor);
-}
 
-void media_geral_turma(struct dados reg_alunos[TF]){
-	int i, cont=0;
-	float media_turma=0, media_geral;
-		
-	for(i=0; i<TF; i++){
-		media_turma += reg_alunos[i].media;
-		cont++;
-	}
-	media_geral = media_turma / cont;
-	printf("\n\nA media da turma foi: %0.2f ", media_geral);
-}
-
-void maior_igual_media7(struct dados reg_alunos[TF]){
-	int i, cont=0;
-		
-	for(i=0; i<TF; i++){
-		if(reg_alunos[i].media >= 7){
-		cont++;
-		}
-	}printf("\n\n %d Alunos possuem a media maior ou igual a 7", cont);
-}
-
-void abaixo_media_7(struct dados reg_alunos[TF]){
-	int i, cont=0;
-		
-	for(i=0; i<TF; i++){
-		if(reg_alunos[i].media < 7){
-		cont++;
-		}
-	}printf("\n\n %d Alunos possuem a media abaixo de 7", cont);
-}
-
-void maior_20_faltas(struct dados reg_alunos[TF]){
-	int i, cont=0;
-		
-	for(i=0; i<TF; i++){
-		if(reg_alunos[i].faltas > 20){
-		cont++;
-		}
-	}printf("\n\n %d Alunos possuem um numero maior que 20 faltas", cont);
-}
-
-*/
 void main(){
 	struct dados reg_part[TF];
 	float media_geral;
